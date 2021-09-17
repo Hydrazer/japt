@@ -1,4 +1,4 @@
-var Japt = require("../src/japt-interpreter");
+var Japt = require("./src/japt-interpreter");
 var fs = require("fs");
 
 Japt.run(
