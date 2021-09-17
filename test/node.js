@@ -1,9 +1,9 @@
 var Japt = require("../src/japt-interpreter");
+var fs = require("fs");
 
-// If all went well, this will print "Hello user" with no trailing newline
 Japt.run(
-	'`HÁM {U}',	// Japt code
-	["user"],	// inputs
+	fs.readFileSync(process.argv[2], "utf-8"),	// Japt code
+	fs.readFileSync(0, "utf-8").split("\n").map(x => `"${x}"`).join("\n"),	// inputs
 	false,		// safe mode
 	null,		// function run after transpiling
 	function (output) { // function run after program runs successfully
